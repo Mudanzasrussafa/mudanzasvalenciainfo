@@ -1,38 +1,27 @@
 import Link from "next/link";
+import Image from "next/image";
 import { site, tel } from "@/lib/site";
 
 export function Logo({ dark = false }: { dark?: boolean }) {
-  const stroke = dark ? "#fff" : "#15171C";
   return (
-    <span className="inline-flex items-center gap-2.5">
-      <svg width="26" height="26" viewBox="0 0 32 32" fill="none" aria-hidden>
-        <circle cx="9" cy="16" r="3.6" stroke={stroke} strokeWidth="2.3" />
-        <circle cx="23" cy="16" r="3.6" fill="#1F3BE5" />
-        <path d="M12.6 16h6.8" stroke={stroke} strokeWidth="2.3" strokeLinecap="round" />
-      </svg>
-      <span className="leading-none">
-        <span
-          className="block font-display font-bold text-[1.02rem] tracking-tight"
-          style={{ color: dark ? "#fff" : "var(--color-ink)" }}
-        >
-          mudanzas valencia
-        </span>
-        <span className="mono block mt-[-3px]" style={{ color: dark ? "#9aa0ad" : "var(--color-ink-soft)", fontSize: "0.55rem" }}>
-          info · asesor independiente
-        </span>
-      </span>
-    </span>
+    <Image
+      src="/img/logo-blanco.png"
+      alt="Russafa"
+      width={900}
+      height={198}
+      style={{ height: 22, width: "auto", filter: dark ? undefined : "brightness(0.15)" }}
+    />
   );
 }
 
 type BtnProps = { href: string; children: React.ReactNode; variant?: "primary" | "ghost" | "light" };
 export function Button({ href, children, variant = "primary" }: BtnProps) {
   const base =
-    "inline-flex items-center gap-2 font-body font-semibold text-[0.92rem] px-5 py-2.5 rounded-full transition-colors";
+    "inline-flex items-center gap-2 font-display font-extrabold uppercase tracking-[0.02em] text-[0.95rem] px-6 py-3 rounded-full transition-colors";
   const styles: Record<string, string> = {
-    primary: "bg-accent text-white hover:bg-accent-press",
-    ghost: "border border-ink text-ink hover:bg-ink hover:text-paper",
-    light: "bg-paper text-ink hover:bg-white",
+    primary: "bg-accent text-crema hover:bg-accent-press",
+    ghost: "border-2 border-ink text-ink hover:bg-ink hover:text-paper",
+    light: "bg-lima text-accent hover:bg-paper",
   };
   const external = href.startsWith("tel:") || href.startsWith("http");
   if (external) {
@@ -51,8 +40,8 @@ export function Button({ href, children, variant = "primary" }: BtnProps) {
 
 export function Eyebrow({ children }: { children: React.ReactNode }) {
   return (
-    <span className="mono inline-flex items-center gap-2 text-accent">
-      <span className="w-[7px] h-[7px] rounded-full bg-accent" />
+    <span className="mono inline-flex items-center gap-2 text-ink-soft">
+      <span className="w-[9px] h-[9px] rounded-[3px] bg-lima border border-accent" />
       {children}
     </span>
   );
@@ -60,24 +49,18 @@ export function Eyebrow({ children }: { children: React.ReactNode }) {
 
 export function AiBridge() {
   return (
-    <div className="relative overflow-hidden rounded-[14px] bg-ink text-paper p-8 md:p-9 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-      <div
-        className="pointer-events-none absolute -right-16 -top-16 w-60 h-60 rounded-full"
-        style={{ background: "radial-gradient(circle, rgba(31,59,229,.55), transparent 70%)" }}
-      />
+    <div className="relative overflow-hidden rounded-[22px] bg-accent text-crema p-8 md:p-9 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
       <div className="relative max-w-xl">
-        <span className="mono inline-block bg-white/10 px-2.5 py-1 rounded-full mb-3" style={{ fontSize: "0.55rem" }}>
-          Nuevo · mudanzasvalencia.ai
-        </span>
-        <h3 className="font-display font-bold text-2xl mb-1.5">¿Quieres un número al instante?</h3>
-        <p className="text-[#b8bbc4] text-[0.98rem]">
-          Aitana, nuestra asistente de IA, calcula una estimación de tu mudanza en segundos y resuelve tus dudas en
-          español, valenciano e inglés.
+        <span className="mono inline-block text-hoja mb-3">mudanzasvalencia.ai</span>
+        <h3 className="font-display font-extrabold text-2xl mb-1.5">¿Prefieres escribir que llamar?</h3>
+        <p className="text-[#c2d0c4] text-[0.98rem]">
+          Aitana, la asistente de inteligencia artificial de Mudanzas Russafa, resuelve tus dudas a cualquier hora en
+          español, valenciano e inglés, y pasa tu solicitud al equipo para que te prepare el presupuesto.
         </p>
       </div>
       <div className="relative shrink-0">
         <Button href="https://mudanzasvalencia.ai" variant="light">
-          Hablar con Aitana →
+          Hablar con Aitana
         </Button>
       </div>
     </div>
@@ -86,52 +69,29 @@ export function AiBridge() {
 
 export function PresupuestoCTA() {
   return (
-    <section id="presupuesto" className="text-center py-20 px-6">
-      <div className="max-w-3xl mx-auto">
-        <h2 className="font-display font-black text-4xl md:text-5xl mb-4">Pide tu presupuesto a medida</h2>
-        <p className="text-ink-soft text-lg mb-7 max-w-md mx-auto">
-          Gratis y sin compromiso. Te respondemos {site.hours.toLowerCase()}.
+    <section id="presupuesto" className="bg-accent text-crema py-20 px-6">
+      <div className="max-w-3xl mx-auto text-center">
+        <h2 className="font-display font-black uppercase text-4xl md:text-6xl mb-4" style={{ fontStretch: "78%" }}>
+          Pide tu presupuesto
+        </h2>
+        <p className="text-[#c2d0c4] text-lg mb-7 max-w-md mx-auto">
+          Visita gratuita en mudanzas completas y presupuesto detallado por escrito. Te atendemos{" "}
+          {site.hours.toLowerCase()}.
         </p>
         <div className="flex gap-3.5 justify-center flex-wrap">
-          <Button href={tel} variant="primary">
+          <Button href={tel} variant="light">
             Llamar al {site.phonePretty}
           </Button>
-          <Button href="/contacto/" variant="ghost">
-            Escríbenos →
-          </Button>
+          <a
+            href={site.whatsapp}
+            target="_blank"
+            rel="noopener"
+            className="inline-flex items-center gap-2 font-display font-extrabold uppercase tracking-[0.02em] text-[0.95rem] px-6 py-3 rounded-full border-2 border-crema text-crema hover:bg-crema hover:text-accent transition-colors"
+          >
+            WhatsApp
+          </a>
         </div>
       </div>
     </section>
-  );
-}
-
-export function RecommendedBlock() {
-  return (
-    <div className="rounded-[14px] bg-ink text-paper p-8 md:p-12 grid md:grid-cols-2 gap-8 md:gap-10 items-center">
-      <div>
-        <span className="mono block text-[#9ca3ff] mb-4">Nuestra recomendación</span>
-        <h2 className="font-display font-black text-3xl text-white mb-3.5">Mudanzas Russafa</h2>
-        <p className="text-[#b8bbc4] mb-5">
-          Entre los profesionales con los que trabajamos, esta es la empresa que recomendamos en Valencia por
-          trayectoria, garantías y trato. Pide presupuesto a través nuestro, sin compromiso.
-        </p>
-        <Button href={tel} variant="light">
-          Pedir presupuesto →
-        </Button>
-      </div>
-      <div className="grid grid-cols-2 gap-2.5">
-        {[
-          ["+15", "años de experiencia"],
-          ["4,9", "valoración media"],
-          ["+3000", "mudanzas realizadas"],
-          ["FEDEM", "FVET · AEMCV"],
-        ].map(([big, small]) => (
-          <div key={big} className="rounded-lg border border-white/15 p-4 text-[#d7d9e0] text-[0.8rem]">
-            <b className="block font-display font-bold text-white text-[1.35rem] mb-0.5">{big}</b>
-            {small}
-          </div>
-        ))}
-      </div>
-    </div>
   );
 }

@@ -1,19 +1,24 @@
 @import "tailwindcss";
 
+/* Paleta Russafa. Los nombres de token se mantienen para que las páginas
+   interiores (que usan text-accent, bg-paper, border-line...) cambien solas. */
 @theme {
-  --color-ink: #15171c;
-  --color-ink-soft: #3a3e48;
-  --color-paper: #f6f4ef;
-  --color-paper-2: #edeae1;
-  --color-line: #d9d5c8;
-  --color-accent: #1f3be5;
-  --color-accent-press: #152bb0;
+  --color-ink: #062b29;
+  --color-ink-soft: #4a615e;
+  --color-paper: #f3f0e3;
+  --color-paper-2: #e7e3d0;
+  --color-line: #d3d3c2;
+  --color-accent: #02403d;
+  --color-accent-press: #0b524e;
+  --color-lima: #a6ff33;
+  --color-hoja: #6bce42;
+  --color-crema: #e7e3d0;
 
-  --font-display: var(--font-schibsted), ui-sans-serif, system-ui, sans-serif;
-  --font-body: var(--font-hanken), ui-sans-serif, system-ui, sans-serif;
-  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
+  --font-display: var(--font-archivo), "Arial Narrow", Arial, sans-serif;
+  --font-body: var(--font-figtree), system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: var(--font-dmmono), ui-monospace, Menlo, monospace;
 
-  --radius-card: 14px;
+  --radius-card: 22px;
 }
 
 * {
@@ -23,13 +28,20 @@
 html {
   scroll-behavior: smooth;
 }
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
 
 body {
   background: var(--color-paper);
   color: var(--color-ink);
   font-family: var(--font-body);
-  line-height: 1.55;
+  font-size: 17px;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 h1,
@@ -37,14 +49,14 @@ h2,
 h3 {
   font-family: var(--font-display);
   line-height: 1.05;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
 }
 
 .mono {
   font-family: var(--font-mono);
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  font-size: 0.78rem;
 }
 
 @keyframes rise {
@@ -53,11 +65,13 @@ h3 {
     transform: none;
   }
 }
-
 .reveal {
-  opacity: 0;
-  transform: translateY(18px);
-  animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+  animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    animation: none;
+  }
 }
 .d1 { animation-delay: 0.05s; }
 .d2 { animation-delay: 0.15s; }

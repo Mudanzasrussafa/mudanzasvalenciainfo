@@ -1,35 +1,37 @@
 import type { Metadata } from "next";
-import { Schibsted_Grotesk, Hanken_Grotesk, JetBrains_Mono } from "next/font/google";
+import { Archivo, Figtree, DM_Mono } from "next/font/google";
 import "./globals.css";
+import "./russafa.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { site } from "@/lib/site";
 
-const schibsted = Schibsted_Grotesk({ subsets: ["latin"], variable: "--font-schibsted", display: "swap" });
-const hanken = Hanken_Grotesk({ subsets: ["latin"], variable: "--font-hanken", display: "swap" });
-const jetbrains = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jetbrains", display: "swap" });
+const archivo = Archivo({ subsets: ["latin"], axes: ["wdth"], variable: "--font-archivo", display: "swap" });
+const figtree = Figtree({ subsets: ["latin"], variable: "--font-figtree", display: "swap" });
+const dmMono = DM_Mono({ subsets: ["latin"], weight: ["400", "500"], variable: "--font-dmmono", display: "swap" });
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Mudanzas Valencia Info — Asesor independiente de mudanzas",
+    default: "Mudanzas en Valencia: guía, precios y presupuesto | Mudanzas Russafa",
     template: "%s | Mudanzas Valencia Info",
   },
   description:
-    "Asesor independiente de mudanzas en Valencia, Alicante y Castellón. Compara, infórmate y consigue el mejor presupuesto, gratis y sin compromiso.",
+    "Guía de mudanzas en Valencia de Mudanzas Russafa: precios, elevador montamuebles, guardamuebles y mudanzas a Alicante y Castellón. Visita gratuita y presupuesto por escrito.",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     locale: "es_ES",
     siteName: site.name,
     url: site.url,
+    images: [{ url: "/img/hero.webp", width: 1700, height: 1281 }],
   },
   robots: { index: true, follow: true },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es" className={`${schibsted.variable} ${hanken.variable} ${jetbrains.variable}`}>
+    <html lang="es" className={`${archivo.variable} ${figtree.variable} ${dmMono.variable}`}>
       <body>
         <Header />
         <main>{children}</main>

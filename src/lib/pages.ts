@@ -147,12 +147,12 @@ export const pages: Record<string, PageData> = {
     slug: "mudanzas-alicante",
     navLabel: "Alicante",
     h1: "Mudanzas en Alicante",
-    title: "Mudanzas en Alicante | Asesor e información",
+    title: "Mudanzas en Alicante desde Valencia | Mudanzas Russafa",
     description:
-      "Información y asesoramiento sobre mudanzas en la provincia de Alicante. Trabajamos con profesionales con experiencia. Presupuesto gratis y sin compromiso.",
+      "Mudanzas a y desde la provincia de Alicante con Mudanzas Russafa, con salida desde nuestra base de Torrent. Visita gratuita y presupuesto por escrito.",
     eyebrow: "Comunidad Valenciana",
     intro: [
-      "También cubrimos la provincia de Alicante, trabajando con empresas de mudanzas con dilatada experiencia que te acompañan durante todo el proceso.",
+      "Mudanzas Russafa también trabaja en la provincia de Alicante. Salimos desde nuestra base de Torrent con nuestro propio equipo y camiones, y te acompañamos durante todo el proceso.",
       "Infórmate de los tipos de servicio y pide tu presupuesto adaptado a tu zona.",
     ],
     related: ["mudanzas-castellon", "precios-mudanzas-valencia", "empresas-de-mudanzas-valencia"],
@@ -161,12 +161,12 @@ export const pages: Record<string, PageData> = {
     slug: "mudanzas-castellon",
     navLabel: "Castellón",
     h1: "Mudanzas en Castellón",
-    title: "Mudanzas en Castellón | Asesor e información",
+    title: "Mudanzas en Castellón desde Valencia | Mudanzas Russafa",
     description:
-      "Información y asesoramiento sobre mudanzas en la provincia de Castellón. Profesionales con experiencia y garantías. Presupuesto gratis y sin compromiso.",
+      "Mudanzas a y desde la provincia de Castellón con Mudanzas Russafa, con salida desde nuestra base de Torrent. Visita gratuita y presupuesto por escrito.",
     eyebrow: "Comunidad Valenciana",
     intro: [
-      "Trabajamos también con empresas de la provincia de Castellón, con la misma exigencia de garantías y trato.",
+      "Mudanzas Russafa también hace mudanzas en la provincia de Castellón. Te atendemos desde nuestra base de Torrent, con el mismo equipo y las mismas garantías que en Valencia.",
       "Consulta los servicios disponibles y solicita tu presupuesto a medida.",
     ],
     related: ["mudanzas-alicante", "precios-mudanzas-valencia", "empresas-de-mudanzas-valencia"],

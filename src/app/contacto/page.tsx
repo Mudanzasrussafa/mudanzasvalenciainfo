@@ -4,7 +4,7 @@ import { site, tel } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contacto",
-  description: "Contacta con Mudanzas Valencia Info. Te asesoramos sobre tu mudanza en Valencia, Alicante y Castellón. Gratis y sin compromiso.",
+  description: "Contacta con Mudanzas Russafa para tu mudanza en Valencia, Alicante o Castellón. Visita gratuita y presupuesto detallado por escrito.",
   alternates: { canonical: "/contacto/" },
 };
 
@@ -15,7 +15,7 @@ export default function Page() {
         <div className="mb-5"><Eyebrow>Estamos para ayudarte</Eyebrow></div>
         <h1 className="font-display font-black text-4xl md:text-5xl mb-6">Contacto</h1>
         <p className="text-ink-soft text-lg mb-8">
-          ¿Tienes dudas sobre tu mudanza o quieres un presupuesto a medida? Llámanos y te asesoramos sin compromiso.
+          ¿Tienes dudas sobre tu mudanza o quieres un presupuesto a medida? Llámanos o escríbenos por WhatsApp y te ayudamos sin compromiso.
           Atendemos {site.hours.toLowerCase()}.
         </p>
         <div className="bg-white border border-line rounded-[14px] p-8 mb-6">
