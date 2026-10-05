@@ -1021,3 +1021,296 @@
     aspect-ratio: 3/2;
   }
 }
+
+/* ============ PÁGINAS DE CONTENIDO ============ */
+.home.r-page section.r-phero {
+  background: var(--pino);
+  color: var(--crema);
+  padding-block: clamp(40px, 6vw, 72px);
+}
+.r-phero .r-wrap {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: clamp(24px, 4vw, 56px);
+  align-items: center;
+}
+.r-phero-txt {
+  display: grid;
+  gap: 20px;
+  min-width: 0;
+}
+.r-phero h1.r-d {
+  font-size: clamp(2.4rem, 6.5vw, 4.6rem);
+  color: var(--crema);
+}
+.r-phero .r-lead {
+  color: #cfd9cf;
+  max-width: 62ch;
+}
+.r-phero .r-lead a {
+  color: var(--lima);
+}
+.r-miga {
+  color: var(--hoja);
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.r-miga a {
+  color: var(--crema);
+  text-decoration: none;
+}
+.r-phero-foto {
+  position: relative;
+  aspect-ratio: 4/3.3;
+  min-width: 0;
+}
+.r-phero-foto img {
+  object-fit: cover;
+  border-radius: var(--r-big) 0 var(--r-big) 0;
+}
+@media (max-width: 860px) {
+  .r-phero .r-wrap {
+    grid-template-columns: 1fr;
+  }
+}
+
+.home.r-page section.r-cuerpo {
+  padding-block: clamp(48px, 7vw, 88px);
+}
+.r-cuerpo-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: clamp(32px, 5vw, 72px);
+  align-items: start;
+}
+@media (max-width: 960px) {
+  .r-cuerpo-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Texto largo */
+.r-article {
+  display: grid;
+  gap: 18px;
+  max-width: 72ch;
+  min-width: 0;
+  font-size: 1.04rem;
+  line-height: 1.7;
+}
+.r-article h2 {
+  font-family: var(--font-display);
+  font-stretch: 82%;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: clamp(1.6rem, 3.6vw, 2.3rem);
+  line-height: 1;
+  margin: 28px 0 4px;
+  color: var(--pino);
+}
+.r-article h2:first-child {
+  margin-top: 0;
+}
+.r-article h3 {
+  font-size: 1.25rem;
+  margin: 10px 0 0;
+  color: var(--pino);
+}
+.r-article p {
+  margin: 0;
+}
+.r-article strong {
+  font-weight: 700;
+  color: var(--tinta);
+}
+.r-article a {
+  color: var(--pino);
+  text-decoration-color: var(--hoja);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  font-weight: 600;
+}
+.r-article ul,
+.r-article ol {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+.r-article ul li {
+  list-style: none;
+  padding-left: 26px;
+  position: relative;
+}
+.r-article ul li::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 0.62em;
+  width: 9px;
+  height: 9px;
+  border-radius: 3px;
+  background: var(--lima);
+  border: 1.5px solid var(--pino);
+}
+.r-article ol {
+  counter-reset: n;
+}
+.r-article ol li {
+  list-style: none;
+  counter-increment: n;
+  padding-left: 40px;
+  position: relative;
+}
+.r-article ol li::before {
+  content: counter(n);
+  position: absolute;
+  left: 0;
+  top: 0.1em;
+  width: 28px;
+  height: 28px;
+  border-radius: 9px;
+  background: var(--lima);
+  color: var(--pino);
+  font-family: var(--font-display);
+  font-weight: 900;
+  display: grid;
+  place-items: center;
+  font-size: 0.95rem;
+}
+.r-tabla {
+  overflow-x: auto;
+  border: 1px solid var(--linea);
+  border-radius: 18px;
+}
+.r-tabla table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 420px;
+  font-variant-numeric: tabular-nums;
+}
+.r-tabla th {
+  background: var(--pino);
+  color: var(--crema);
+  text-align: left;
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 0.8rem;
+  padding: 12px 16px;
+}
+.r-tabla td {
+  padding: 12px 16px;
+  border-top: 1px solid var(--linea);
+}
+.r-tabla tr:nth-child(even) td {
+  background: var(--crema);
+}
+.r-tabla td:not(:first-child) {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* Tarjetas de enlace a otras guías */
+.r-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 12px;
+}
+.r-card {
+  display: grid;
+  gap: 6px;
+  background: var(--crema);
+  border-radius: 18px;
+  padding: 18px 20px;
+  text-decoration: none !important;
+  transition: background 0.15s;
+}
+.r-card:hover {
+  background: var(--lima);
+}
+.r-card .mono {
+  color: var(--suave);
+  font-size: 0.72rem;
+}
+.r-card-t {
+  font-family: var(--font-display);
+  font-stretch: 88%;
+  font-weight: 800;
+  font-size: 1.1rem;
+  line-height: 1.15;
+  color: var(--pino);
+}
+.r-card-go {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--pino);
+  font-weight: 500;
+}
+
+/* Lateral */
+.r-aside {
+  position: sticky;
+  top: calc(env(safe-area-inset-top, 0px) + 84px);
+}
+.r-aside-box {
+  background: var(--pino);
+  color: var(--crema);
+  border-radius: 26px;
+  padding: 26px;
+  display: grid;
+  gap: 12px;
+}
+.r-aside-box .mono {
+  color: var(--hoja);
+}
+.r-aside-box h3 {
+  font-size: 1.4rem;
+}
+.r-aside-box p {
+  color: #c2d0c4;
+  font-size: 0.95rem;
+}
+.r-aside-tel {
+  font-family: var(--font-display);
+  font-stretch: 80%;
+  font-weight: 900;
+  font-size: 2.2rem;
+  color: var(--lima);
+  text-decoration: none;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.r-aside-box .r-aside-h {
+  font-size: 0.85rem;
+  margin-top: -4px;
+}
+.r-aside-box .r-btn {
+  justify-content: center;
+}
+@media (max-width: 960px) {
+  .r-aside {
+    position: static;
+  }
+}
+
+/* Guía en la home */
+.home section.r-guia {
+  background: var(--papel);
+  border-top: 1px solid var(--linea);
+}
+.r-guia .r-article {
+  margin-inline: auto;
+}
+.r-article .r-destacado {
+  justify-self: start;
+  background: var(--lima);
+  color: var(--pino);
+  font-family: var(--font-display);
+  font-stretch: 85%;
+  font-weight: 900;
+  font-size: 1.35rem;
+  padding: 8px 18px;
+  border-radius: 12px;
+  font-variant-numeric: tabular-nums;
+}

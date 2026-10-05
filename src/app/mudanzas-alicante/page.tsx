@@ -1,8 +1,9 @@
 import ServicePage, { buildMetadata } from "@/components/ServicePage";
-import { pages } from "@/lib/pages";
 
-export const metadata = buildMetadata("mudanzas-alicante");
+const slug = "mudanzas-alicante";
+
+export const metadata = buildMetadata(slug);
 
 export default function Page() {
-  return <ServicePage data={pages["mudanzas-alicante"]} />;
+  return <ServicePage slug={slug} />;
 }

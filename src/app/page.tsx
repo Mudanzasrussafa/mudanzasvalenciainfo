@@ -1,7 +1,16 @@
 import Link from "next/link";
 import Image from "next/image";
+import type { Metadata } from "next";
 import CopyPhone from "@/components/CopyPhone";
+import { Article, readContent } from "@/components/Article";
 import { site, tel } from "@/lib/site";
+
+export const metadata: Metadata = {
+  title: { absolute: "Mudanzas Valencia Info - Asesor de mudanzas en Valencia" },
+  description:
+    "Mudanzas Valencia - Trabajamos con los mejores profesionales de mudanzas en Valencia - Infórmate de todos los servicios de mudanza.",
+  alternates: { canonical: "/" },
+};
 
 const servicios = [
   { img: "i-vaciado", w: 360, h: 318, t: "Mudanzas particulares", p: "Pisos y casas: embalaje, desmontaje, transporte y montaje en destino.", ir: "Particulares", href: "/mudanzas-particulares-valencia/" },
@@ -380,6 +389,18 @@ export default function Home() {
               </Link>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="r-guia" id="guia">
+        <div className="r-wrap">
+          <div className="r-cab">
+            <div>
+              <span className="mono">Guía de mudanzas en Valencia</span>
+              <h2 className="r-d">Sobre mudanzas Valencia</h2>
+            </div>
+          </div>
+          <Article src={readContent("home")} />
         </div>
       </section>
 
