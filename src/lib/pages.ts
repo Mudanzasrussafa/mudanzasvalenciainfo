@@ -147,7 +147,7 @@ export const pages: Record<string, PageData> = {
     slug: "mudanzas-alicante",
     navLabel: "Alicante",
     h1: "Mudanzas en Alicante",
-    title: "Mudanzas en Alicante desde Valencia | Mudanzas Russafa",
+    title: "Mudanzas en Alicante desde Valencia | Guía y presupuesto",
     description:
       "Mudanzas a y desde la provincia de Alicante con Mudanzas Russafa, con salida desde nuestra base de Torrent. Visita gratuita y presupuesto por escrito.",
     eyebrow: "Comunidad Valenciana",
@@ -161,7 +161,7 @@ export const pages: Record<string, PageData> = {
     slug: "mudanzas-castellon",
     navLabel: "Castellón",
     h1: "Mudanzas en Castellón",
-    title: "Mudanzas en Castellón desde Valencia | Mudanzas Russafa",
+    title: "Mudanzas en Castellón desde Valencia | Guía y presupuesto",
     description:
       "Mudanzas a y desde la provincia de Castellón con Mudanzas Russafa, con salida desde nuestra base de Torrent. Visita gratuita y presupuesto por escrito.",
     eyebrow: "Comunidad Valenciana",
